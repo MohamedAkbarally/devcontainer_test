@@ -22,8 +22,8 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install pipenv && pipenv install --dev && pipenv install && export PIPENV_ACTIVE=$(pipenv --venv) && mkdir -p .vscode && echo \"{\\\"python.defaultInterpreterPath\\\": \\\"$PIPENV_ACTIVE\\\"}\" > .vscode/settings.json",
-    "postAttachCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"postCreateCommand": "pip install pipenv && pipenv install --dev && pipenv install",
+    "postAttachCommand": "export PIPENV_ACTIVE=$(pipenv --venv) && mkdir -p .vscode && echo \"{\\\"python.defaultInterpreterPath\\\": \\\"$PIPENV_ACTIVE\\\"}\" > .vscode/settings.json && git config --global --add safe.directory ${containerWorkspaceFolder}",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
