@@ -1,0 +1,31 @@
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+exclude = '''
+    /(
+        \.git
+      | \.hg
+      | \.mypy_cache
+      | \.tox
+      | \.venv
+      | _build
+      | buck-out
+      | build
+      | dist
+    )/
+'''
+
+[tool.flake8]
+ignore = "W503"
+max-line-length = 100
+
+[tool.mypy]
+ignore_missing_imports = true
+follow_imports = "silent"
+show_column_numbers = true
+disallow_untyped_defs = true
+disallow_untyped_calls = true
+namespace_packages = true
+
+[tool.isort]
+profile = "black"
